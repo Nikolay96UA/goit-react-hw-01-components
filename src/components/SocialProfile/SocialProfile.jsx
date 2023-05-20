@@ -1,4 +1,3 @@
-import user from './user.json';
 import PropTypes from 'prop-types';
 import css from './SocialProfile.module.css'
 
