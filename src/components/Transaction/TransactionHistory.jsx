@@ -29,5 +29,5 @@ export function TransactionTable({ transaction }) {
   }
   
   TransactionTable.propTypes = {
-    data: PropTypes.array
+    transaction:  PropTypes.arrayOf(PropTypes.shape({id: PropTypes.number}))
     }

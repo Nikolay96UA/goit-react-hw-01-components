@@ -1,12 +1,14 @@
-import PropTypes from "prop-types";
-import {StatisticsCard} from '../Statistics/StatisticsCard';
-import cssStatistics from './Statistics.module.css'
+import PropTypes from 'prop-types';
+import { StatisticsCard } from '../Statistics/StatisticsCard';
+import cssStatistics from './Statistics.module.css';
 
+export function StatisticsList({ title, data }) {
+  return (
+    <>
+      {title && <h2>{title}</h2>}
 
-export  function StatisticsList({data}) {
-    return (
-        <ul className={cssStatistics.list}> 
-        {data.map(({ id, label,percentage }) => {
+      <ul className={cssStatistics.list}>
+        {data.map(({ id, label, percentage }) => {
           return (
             <StatisticsCard
               key={id}
@@ -17,10 +19,10 @@ export  function StatisticsList({data}) {
           );
         })}
       </ul>
-    )
+    </>
+  );
 }
 
 StatisticsList.propTypes = {
-data: PropTypes.array
-}
-
+  data: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number })),
+};
